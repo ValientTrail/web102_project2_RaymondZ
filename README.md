@@ -2,7 +2,7 @@
 
 Submitted by: **Raymond Zegles**
 
-This web app: **This website is an extension of my Project 2 website, and is about astronomy facts. The**
+This web app: **This website is an extension of my Project 2 website, and is about astronomy facts. I added a text input to allow users to guess at the answer on the back of the card, and a shuffle button to allow the user to get a random card in the available cards.**
 
 Time spent: **9** hours spent in total
 
