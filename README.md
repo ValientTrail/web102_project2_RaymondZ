@@ -17,7 +17,7 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [X] A shuffle button is used to randomize the order of the cards
+- [ ] A shuffle button is used to randomize the order of the cards
 - [ ] A user's answer may be counted as correct even when it is slightly different from the target answer
 - [ ] A counter displays the user's current and longest streak of correct responses
 - [ ] A user can mark a card that they have mastered and have it removed from the pool of answers as well as added to a list of mastered cards
@@ -30,7 +30,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2pyNTRlazg1MGxyaDZhMmRmbDJkMjVudDFlbHZubTV6aGo2ZzNnaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8fpnObdAjMbgAHbSmk/giphy.gif' title='Project 3 GIF Walkthrough' width='' alt='Project 3 GIF Walthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
 GIF created with ...  
@@ -43,9 +43,11 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 
+I had a bit of difficulty allowing my text input to have placeholder text appear on the website. I fixed it by using the placeholder attribute properly. I also had some trouble making text show up to show the user whether or not their answer was correct. I was able to fix the issue by creating a function to handle checking if the user's answer is correct, and changing an empty paragraph element to say that they were correct if the answer matched the card, or make the text box have red borders and say their answer is incorrect if their answer was wrong.
+
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2024] [Raymond Zegles]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

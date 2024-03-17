@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
-import './App.css'
+import React, { useRef, useState } from 'react';
+import './App.css';
 import planetIcon from '../src/assets/freepik-planets-icon.png';
-import Card from './components/Card.jsx'
+import Card from './components/Card.jsx';
 
 const cards = [
   {
@@ -135,8 +135,7 @@ function App() {
           question={cards[index].question} 
           answer={cards[index].answer} 
           backImg={cards[index].backImg} 
-          onNewCard={false}
-          />
+          onNewCard={false}/>
         <form onSubmit={checkAnswer}>
             <label>Guess your answer here: </label>
             <input type='text' value={userAnswer} style={styleInput} 
