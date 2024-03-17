@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 2280px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,7 +24,7 @@
 
 .flash-card-container {
   width: 100%;
-  height: 400px;
+  height: 500px;
   padding: 3%;
   display: flex;
   flex-direction: column;

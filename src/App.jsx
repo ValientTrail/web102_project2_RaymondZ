@@ -82,7 +82,7 @@ function App() {
     }
     setIndex(randCard);
   }
-
+  
   return (
     <>
       <div className='header'>
@@ -99,6 +99,11 @@ function App() {
           backImg={cards[index].backImg} 
           onNewCard={false}
           />
+          <form>
+            <label>Guess your answer here:</label>
+            <input type='text' value={answer} onChange={(e) => setAnswer(e.target.value)}>Place your answer...</input>
+            <input type='submit'/>
+        </form>
         <button onClick={setRandomCard}>Next Card</button>
       </div>
     </>
