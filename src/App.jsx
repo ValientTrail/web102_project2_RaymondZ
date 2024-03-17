@@ -69,6 +69,7 @@ const cards = [
 function App() {
   const totalCards = cards.length;
   const [index, setIndex] = useState(0);
+  const [answer, setAnswer] = useState("");
  
   const randomNumberInRange = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
