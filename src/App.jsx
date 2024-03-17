@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './App.css'
 import planetIcon from '../src/assets/freepik-planets-icon.png';
 import Card from './components/Card.jsx'
@@ -69,19 +69,51 @@ const cards = [
 function App() {
   const totalCards = cards.length;
   const [index, setIndex] = useState(0);
-  const [answer, setAnswer] = useState("");
+  const [userAnswer, setUserAnswer] = useState("");
+  const [styleInput, setStyleInput] = useState({});
+  const [prevIndex, setPrevIndex]= useState(0);
  
   const randomNumberInRange = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
+  const setNextCard = () => {
+    if(index < cards.length - 1){
+      setPrevIndex(index);
+      setIndex(index + 1);
+    }else{
+      setIndex(0);
+    }
+  }
+
   const setRandomCard = () => {
-    var prevIndex = index;
     var randCard = randomNumberInRange(0, totalCards - 1);
     while(randCard == prevIndex){
       randCard = randomNumberInRange(0, totalCards - 1);
     }
+    setPrevIndex(index);
     setIndex(randCard);
+  }
+
+  const setPrevCard = () => {
+    setIndex(prevIndex);
+  }
+  
+  const applyStyle = () => {
+    setStyleInput({
+      border: '2px solid red',
+      borderRadius: '5px',
+    });
+  };
+
+  var checkAnswer = (event) =>{
+    if(userAnswer == cards.at(index).answer){
+      alert("Your answer is correct!");
+      setStyleInput({});
+    }else{
+      applyStyle();
+    }
+    event.preventDefault();
   }
   
   return (
@@ -90,7 +122,7 @@ function App() {
         <img src={planetIcon} className='planetsIcon'></img>
         <h1>Astronomy Quiz</h1>
         <h4>How much do you know about the universe? Find out here with this quiz on astronomy facts!</h4>
-        <h5>Total Cards: {totalCards}</h5>
+        <h4>Total Cards: {totalCards}</h4>
         <p>Click on a card to flip it around!</p>
       </div>
       <div className="flash-card-container">
@@ -100,12 +132,19 @@ function App() {
           backImg={cards[index].backImg} 
           onNewCard={false}
           />
-          <form>
-            <label>Guess your answer here:</label>
-            <input type='text' value={answer} onChange={(e) => setAnswer(e.target.value)}>Place your answer...</input>
-            <input type='submit'/>
+        <form onSubmit={checkAnswer}>
+            <label>Guess your answer here: </label>
+            <input type='text' value={userAnswer} style={styleInput} 
+            onChange={(e) => setUserAnswer(e.target.value)}
+            placeholder='Guess the answer here...'
+            />
+            <input type='submit' className='submitButton'/>
         </form>
-        <button onClick={setRandomCard}>Next Card</button>
+        <div>
+          <button onClick={setPrevCard}>Previous Card</button>
+          <button onClick={setNextCard}>Next Card</button>
+          <button onClick={setRandomCard}>Shuffle Cards</button>
+        </div>
       </div>
     </>
   )
