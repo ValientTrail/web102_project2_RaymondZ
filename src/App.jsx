@@ -70,6 +70,7 @@ function App() {
   const totalCards = cards.length;
   const [index, setIndex] = useState(0);
   const [userAnswer, setUserAnswer] = useState("");
+  const [answerCheckDisplay, setAnswerCheckDisplay] = useState("");
   const [styleInput, setStyleInput] = useState({});
   const [prevIndex, setPrevIndex]= useState(0);
  
@@ -84,6 +85,7 @@ function App() {
     }else{
       setIndex(0);
     }
+    setAnswerCheckDisplay("");
   }
 
   const setRandomCard = () => {
@@ -93,10 +95,12 @@ function App() {
     }
     setPrevIndex(index);
     setIndex(randCard);
+    setAnswerCheckDisplay("");
   }
 
   const setPrevCard = () => {
     setIndex(prevIndex);
+    setAnswerCheckDisplay("");
   }
   
   const applyStyle = () => {
@@ -107,13 +111,14 @@ function App() {
   };
 
   var checkAnswer = (event) =>{
+    event.preventDefault();
     if(userAnswer == cards.at(index).answer){
-      alert("Your answer is correct!");
+      setAnswerCheckDisplay("Your answer is correct!");
       setStyleInput({});
     }else{
+      setAnswerCheckDisplay("Sorry, your answer is incorrect.");
       applyStyle();
     }
-    event.preventDefault();
   }
   
   return (
@@ -123,7 +128,7 @@ function App() {
         <h1>Astronomy Quiz</h1>
         <h4>How much do you know about the universe? Find out here with this quiz on astronomy facts!</h4>
         <h4>Total Cards: {totalCards}</h4>
-        <p>Click on a card to flip it around!</p>
+        <p>Click on a card to flip it around after you submit your answer!</p>
       </div>
       <div className="flash-card-container">
         <Card    
@@ -136,11 +141,12 @@ function App() {
             <label>Guess your answer here: </label>
             <input type='text' value={userAnswer} style={styleInput} 
             onChange={(e) => setUserAnswer(e.target.value)}
-            placeholder='Guess the answer here...'
+            placeholder='Guess the answer here...' 
             />
-            <input type='submit' className='submitButton'/>
+            <input type='submit' className='submitButton' />
         </form>
-        <div>
+        <p className='answerCheckDisplay'>{answerCheckDisplay}</p>
+        <div className='cardButtons'>
           <button onClick={setPrevCard}>Previous Card</button>
           <button onClick={setNextCard}>Next Card</button>
           <button onClick={setRandomCard}>Shuffle Cards</button>

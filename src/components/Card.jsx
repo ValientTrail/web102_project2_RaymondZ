@@ -34,7 +34,8 @@ Card.propTypes = {
     question: PropTypes.string,
     answer: PropTypes.string,
     backImg: PropTypes.string,
-    onNewCard: PropTypes.bool
+    onNewCard: PropTypes.bool,
+    userHasAnswered: PropTypes.bool
 }
 
 export default Card;
