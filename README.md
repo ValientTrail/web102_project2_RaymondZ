@@ -33,11 +33,7 @@ Here's a walkthrough of implemented user stories:
 <img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2pyNTRlazg1MGxyaDZhMmRmbDJkMjVudDFlbHZubTV6aGo2ZzNnaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8fpnObdAjMbgAHbSmk/giphy.gif' title='Project 3 GIF Walkthrough' width='' alt='Project 3 GIF Walthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+GIF created with ScreenToGIF
 
 ## Notes
 
