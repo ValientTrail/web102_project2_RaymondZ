@@ -28,7 +28,7 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of implemented features:
 
 <img src='https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2pyNTRlazg1MGxyaDZhMmRmbDJkMjVudDFlbHZubTV6aGo2ZzNnaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/8fpnObdAjMbgAHbSmk/giphy.gif' title='Project 3 GIF Walkthrough' width='' alt='Project 3 GIF Walthrough' />
 
