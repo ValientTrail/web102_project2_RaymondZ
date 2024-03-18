@@ -8,10 +8,6 @@ const Card = (props) => {
     const handleClick = () => {
         setIsFlipped(!isFlipped);
     };
-
-    useEffect(() => {
-        setIsFlipped(false); 
-    }, [props.question]);
     
 
     return(

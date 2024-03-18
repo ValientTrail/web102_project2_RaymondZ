@@ -131,7 +131,8 @@ function App() {
         <p>Click on a card to flip it around after you submit your answer!</p>
       </div>
       <div className="flash-card-container">
-        <Card    
+        <Card
+          key={index}    
           question={cards[index].question} 
           answer={cards[index].answer} 
           backImg={cards[index].backImg} 
